@@ -1,5 +1,5 @@
 {
-  "name": "cote",
+  "name": "mios-cote",
   "version": "0.20.0",
   "keywords": [
     "microservices",
@@ -39,6 +39,7 @@
     "core-js": "^2.6.8",
     "eventemitter2": "5.0.1",
     "lodash": "^4.17.11",
+    "mqtt": "^2.18.8",
     "portfinder": "1.0.20",
     "socket.io": "2.2.0",
     "uuid": "^3.3.2"
@@ -52,9 +53,9 @@
     "commander": "2.20.0",
     "coveralls": "^3.0.3",
     "eslint": "^5.16.0",
-    "eslint-config-google": "^0.12.0",
+    "eslint-config-google": "^0.13.0",
     "humanize-number": "0.0.2",
-    "nyc": "^13.3.0",
+    "nyc": "^14.1.1",
     "randomstring": "^1.1.5",
     "request": "^2.88.0",
     "sinon": "^7.3.2",
