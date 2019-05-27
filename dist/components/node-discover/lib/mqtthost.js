@@ -18,7 +18,7 @@ function MqttHost(ip, mqttnetwork) {
   let cid;
   cid = this.mqn.network.hostName + require('crypto').createHash('md5').update(this.mqn.network.instanceUuid).digest('hex');
   cid = cid.substring(22);
-  options = {
+  const options = {
     keepalive: 10,
     clientId: cid,
     reconnectPeriod: 1000,

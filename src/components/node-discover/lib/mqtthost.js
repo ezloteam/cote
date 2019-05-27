@@ -22,7 +22,7 @@ function MqttHost(ip, mqttnetwork) {
             .digest('hex');
     cid = cid.substring(22);
 
-    options = {
+    const options = {
         keepalive: 10,
         clientId: cid,
         reconnectPeriod: 1000,
