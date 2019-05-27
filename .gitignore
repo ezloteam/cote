@@ -5,3 +5,4 @@ jsconfig.json
 coverage
 .nyc_output
 .history
+dist

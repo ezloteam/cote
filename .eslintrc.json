@@ -1,0 +1,17 @@
+{
+  "env": {
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "extends": ["google"],
+  "rules": {
+    "require-jsdoc": "off",
+    "new-cap": "off",
+    "guard-for-in": "off",
+    "indent": ["error", 4],
+    "object-curly-spacing": ["error", "always"],
+    "max-len": ["error", { "code": 130 }]
+  }
+}

@@ -1,6 +1,6 @@
 {
   "name": "mios-cote",
-  "version": "0.20.4",
+  "version": "0.20.5",
   "keywords": [
     "microservices",
     "zero-configuration",
@@ -13,15 +13,12 @@
   ],
   "description": "A Node.js library for building zero-configuration microservices.",
   "scripts": {
-    "build": "babel src -D -d dist -s",
-    "clean": "rm -rf dist",
     "coverage": "nyc -x=\"**/examples/*\" -x=\"**/*balanced*.js\" -x=\"**/test/*.js\" -x=\"**/lib/*.js\" report",
     "lint": "eslint src test",
     "lint-fix": "eslint --fix src test",
-    "prepublish": "npm run build",
     "test": "NODE_ENV=dev nyc -x=\"**/examples/*\" -x=\"**/*balanced*.js\" -x=\"**/test/*.js\" -x=\"**/lib/*.js\" ava --timeout=60000"
   },
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "license": "MIT",
   "repository": "dashersw/cote",
   "engines": {
@@ -56,52 +53,5 @@
     "request": "^2.88.0",
     "sinon": "^7.3.2",
     "socket.io-client": "2.2.0"
-  },
-  "eslintConfig": {
-    "env": {
-      "node": true
-    },
-    "parserOptions": {
-      "ecmaVersion": 2018
-    },
-    "extends": [
-      "google"
-    ],
-    "rules": {
-      "require-jsdoc": "off",
-      "new-cap": "off",
-      "guard-for-in": "off",
-      "indent": [
-        "error",
-        4
-      ],
-      "object-curly-spacing": [
-        "error",
-        "always"
-      ],
-      "max-len": [
-        "error",
-        {
-          "code": 120
-        }
-      ]
-    }
-  },
-  "babel": {
-    "presets": [
-      [
-        "@babel/env",
-        {
-          "targets": {
-            "node": "6"
-          },
-          "useBuiltIns": "usage",
-          "corejs": "2",
-          "exclude": [
-            "es6.promise"
-          ]
-        }
-      ]
-    ]
   }
 }

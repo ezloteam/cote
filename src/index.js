@@ -16,20 +16,11 @@ const cote = (options = {}) => {
 
     Discovery.setDefaults(options);
 
-    const components = [
-        Requester,
-        Responder,
-        Publisher,
-        Subscriber,
-        Sockend,
-        TimeBalancedRequester,
-        PendingBalancedRequester,
-    ];
+    const components = [Requester, Responder, Publisher, Subscriber, Sockend, TimeBalancedRequester, PendingBalancedRequester];
 
     components.forEach(function(component) {
         component.setEnvironment(options.environment);
-        component.setUseHostNames &&
-            component.setUseHostNames(options.useHostNames);
+        component.setUseHostNames && component.setUseHostNames(options.useHostNames);
     });
 
     return cote;
@@ -45,4 +36,4 @@ cote.MonitoringTool = MonitoringTool;
 cote.TimeBalancedRequester = TimeBalancedRequester;
 cote.PendingBalancedRequester = PendingBalancedRequester;
 
-module.exports = cote();
+module.exports = cote;

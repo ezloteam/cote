@@ -74,7 +74,7 @@ function Network(options) {
             } else if (obj.node_left) {
                 self.emit('node_left', obj.node_left, mqtthostid);
             } else if (obj.iid == self.instanceUuid && self.ignoreInstance) {
-            /* else if (obj.pid == procUuid && self.ignoreProcess && obj.iid !== self.instanceUuid) {
+                /* else if (obj.pid == procUuid && self.ignoreProcess && obj.iid !== self.instanceUuid) {
                     return false;
             }*/
                 return false;

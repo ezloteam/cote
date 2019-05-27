@@ -1,4 +1,5 @@
-const Discover = require('./node-discover');
+// const Discover = require('./node-discover');
+const Discover = require('@dashersw/node-discover');
 
 // eslint-disable-next-line
 const colors = require('colors');
@@ -27,24 +28,26 @@ class Discovery extends Discover {
 
         this.me.id = this.broadcast.instanceUuid;
         this.me.processId = this.broadcast.processUuid;
-        this.me.processCommand = process.argv.slice(1).map((n) => {
-            return n.split('/').slice(-2).join('/');
-        }).join(' ');
+        this.me.processCommand = process.argv
+            .slice(1)
+            .map((n) => {
+                return n
+                    .split('/')
+                    .slice(-2)
+                    .join('/');
+            })
+            .join(' ');
 
         options.log && this.log(this.helloLogger());
 
         this.on('added', (obj) => {
             if (!options.monitor && obj.advertisement.key != this.advertisement.key) return;
-
-            options.log && options.statusLogsEnabled && options.helloLogsEnabled &&
-                this.log(this.statusLogger(obj, 'online'));
+            options.log && options.statusLogsEnabled && options.helloLogsEnabled && this.log(this.statusLogger(obj, 'online'));
         });
 
         this.on('removed', (obj) => {
             if (!options.monitor && obj.advertisement.key != this.advertisement.key) return;
-
-            options.log && options.statusLogsEnabled &&
-                this.log(this.statusLogger(obj, 'offline'));
+            options.log && options.statusLogsEnabled && this.log(this.statusLogger(obj, 'offline'));
         });
     }
 
@@ -57,7 +60,8 @@ class Discovery extends Discover {
     }
 
     helloLogger() {
-        return ['\nHello! I\'m'.white, ...this.statusLogger(this.me), '\n========================\n'.white];
+        // eslint-disable-next-line quotes
+        return ["\nHello! I'm".white, ...this.statusLogger(this.me), '\n========================\n'.white];
     }
 
     statusLogger(obj, status) {
@@ -70,8 +74,7 @@ class Discovery extends Discover {
             logs.push();
         }
 
-        logs.push(
-            `${obj.advertisement.name.white}${'#'.grey}${obj.id.grey}`);
+        logs.push(`${obj.advertisement.name.white}${'#'.grey}${obj.id.grey}`);
 
         if (obj.advertisement.port) {
             logs.push('on', obj.advertisement.port.toString().blue);
