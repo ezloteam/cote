@@ -159,6 +159,7 @@ function Discover(options, callback) {
 
         // data.lastSeen = +new Date();
         // data.address = rinfo.address;
+        data.advertisement = self.advertisement;
         data.hostName = id; // obj.hostName;
         data.port = rinfo.port;
         data.id = obj.iid;
